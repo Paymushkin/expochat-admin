@@ -1,0 +1,94 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+
+	&:not(:last-child) {
+		margin-bottom: 2.5rem;
+	}
+
+	caption {
+		position: relative;
+		margin-left: 1.375rem;
+		margin-bottom: 1.875rem;
+		width: fit-content;
+		font-weight: 600;
+		line-height: 0.8695652174;
+
+		&::before{
+			content:'';
+			position: absolute;
+			bottom: -0.5rem;
+			width: 100%;
+			height: rem(3);
+			background-color: #FDD32A;
+		}
+	}
+
+	thead {
+
+		th {
+			padding: 0 1.0625rem 1.0625rem;
+			color: #9d9d95;
+			font-weight: 400;
+			text-align: left;
+		}
+	}
+
+	tbody {
+
+		tr {
+			background-color: #fff;
+			cursor: pointer;
+			border: 1px solid transparent;
+			outline: 1px solid transparent;
+			border-bottom-color: #d8d8d6;
+			transition: 0.3s outline-color ease;
+
+			&.finished {
+				background-color: #efefef;
+			}
+
+			&.avail {
+				background-color: #fee683;
+			}
+
+			@media (any-hover: hover){
+				&:hover{
+					border-bottom-color: transparent;
+					outline-color: #FDD32A;
+				}
+			}
+
+			td {
+				padding: 1.0625rem;
+
+				.table-item__name {
+					display: flex;
+					align-items: center;
+					flex-wrap: nowrap;
+					gap: 0.625rem;
+
+					span {
+						display: block;
+						white-space: nowrap;
+					}
+
+					a {
+						display: flex;
+						align-items: center;
+					}
+
+					div {
+						margin-right: 0.625rem;
+						width: 2.5rem;
+						height: 2.5rem;
+						background-image: url("https://cdn.meyou.id/saas/events/circle.svg");
+						background-position: center;
+						background-size: cover;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+}
